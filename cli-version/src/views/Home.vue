@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="app">
+  <div>
     <h1>{{ restaurantName }}</h1>
     <p class="description">
       Bienvenue dans notre café {{ restaurantName }} ! Nous sommes réputés pour notre pain et nos merveilleuses pâtisseries. Faites vous plaisir dès
@@ -90,3 +90,29 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.description {
+  max-width: 960px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
+
+.footer {
+  text-align: center;
+  font-style: italic;
+}
+</style>
