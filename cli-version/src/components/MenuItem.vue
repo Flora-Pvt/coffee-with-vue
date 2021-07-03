@@ -7,7 +7,7 @@
       <p v-else>Prix : {{ price }}</p>
       <p v-if="inStock">En stock</p>
       <p v-else>En rupture de stock</p>
-      <div>
+      <div v-if="inStock">
         <label for="add-item-quantity">Quantité : {{ quantity }}</label>
         <input id="add-item-quantity" type="number" v-model.number="quantity" />
         <button @click="addToShoppingCart(quantity)">Ajouter au panier d'achat</button>
@@ -19,7 +19,32 @@
 <script>
 export default {
   name: "MenuItem",
-  props: ["addToShoppingCart", "image", "inStock", "name", "quantity", "price"],
+  props: {
+    addToShoppingCart: {
+      type: Function,
+      required: true,
+    },
+    image: {
+      type: Object,
+      required: true,
+    },
+    inStock: {
+      type: Boolean,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      defaut: 1,
+    },
+  },
   data() {
     return {
       onSale: false,
