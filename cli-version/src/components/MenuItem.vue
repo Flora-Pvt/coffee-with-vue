@@ -7,7 +7,7 @@
       <p v-else>En rupture de stock</p>
       <div>
         <label for="add-item-quantity">Quantité : {{ quantity }}</label>
-        <input id="add-item-quantity" type="number" v-model="quantity" />
+        <input id="add-item-quantity" type="number" v-model.number="quantity" />
         <button @click="addToShoppingCart(quantity)">Ajouter au panier d'achat</button>
       </div>
     </div>
