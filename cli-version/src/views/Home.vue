@@ -11,7 +11,7 @@
       <MenuItem
         v-for="item in simpleMenu"
         :key="item.name"
-        :addToShoppingCart="addToShoppingCart"
+        @add-items-to-cart="addToShoppingCart"
         :name="item.name"
         :image="item.image"
         :price="item.price"
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     addToShoppingCart(amount) {
-      this.itemsQuantityInCart += parseInt(amount);
+      this.itemsQuantityInCart += amount;
     },
   },
 };
