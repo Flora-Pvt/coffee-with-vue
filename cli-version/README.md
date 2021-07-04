@@ -1,4 +1,4 @@
-# cli-version
+# Coffee with Vue
 
 ## Project setup
 ```
