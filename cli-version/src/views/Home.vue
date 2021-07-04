@@ -11,7 +11,6 @@
       <MenuItem
         v-for="item in simpleMenu"
         :key="item.name"
-        @add-items-to-cart="addToShoppingCart"
         :name="item.name"
         :image="item.image"
         :price="item.price"
@@ -43,11 +42,6 @@ export default {
   computed: {
     ...mapState({ itemsQuantityInCart: "itemsQuantityInCart", restaurantName: "restaurantName", simpleMenu: "simpleMenu" }),
     ...mapGetters({ copyright: "copyright" }),
-  },
-  methods: {
-    addToShoppingCart(amount) {
-      this.itemsQuantityInCart += amount;
-    },
   },
 };
 </script>

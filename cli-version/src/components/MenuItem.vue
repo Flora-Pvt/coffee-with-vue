@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import BaseButton from "./BaseButton.vue";
 
 export default {
@@ -49,11 +50,7 @@ export default {
       onSale: false,
     };
   },
-  methods: {
-    updateShoppingCart(quantity) {
-      this.$emit("add-items-to-cart", quantity);
-    },
-  },
+  methods: { ...mapActions(["updateShoppingCart"]) },
   beforeMount() {
     const currentDay = new Date().getDate();
     if (currentDay % 2 === 0) {

@@ -43,7 +43,15 @@ export default createStore({
       return `Copyright ${state.restaurantName} ${currentYear}`;
     },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    INCREASE_COUNT(state, amount = 0) {
+      state.itemsQuantityInCart += Number(amount);
+    },
+  },
+  actions: {
+    updateShoppingCart({ commit }, quantity) {
+      commit("INCREASE_COUNT", quantity);
+    },
+  },
   modules: {},
 });
